@@ -1,5 +1,5 @@
 #!/bin/bash
-
+{
 #first of all lets kill all docker instances
 systemctl stop nextbox-compose.service
 #setting locales
@@ -48,7 +48,7 @@ apt -fuy  autoremove
 
 sed -i 's:/usr/lib/dhcpcd5/dhcpcd:/usr/sbin/dhcpcd:' /etc/systemd/system/dhcpcd.service.d/wait.conf
 
-
+} > /log.out
 #reboot
 systemctl reboot
 
